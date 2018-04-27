@@ -1,0 +1,26 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Wifi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="Wifi.MainPage"
+    mc:Ignorable="d" Height="877.832" Width="1712.723">
+    <Page.Resources>
+        <SolidColorBrush x:Key="Brush1" Color="Transparent"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Button x:ConnectionId='1' Content="Button" HorizontalAlignment="Left" Margin="209,644,0,0" VerticalAlignment="Top" Height="68" Width="185"                     />
+        <ScrollViewer HorizontalAlignment="Left" Height="586" Margin="76,19,0,0" VerticalAlignment="Top" Width="721">
+
+            <TextBlock x:ConnectionId='4' x:Name="block" TextWrapping="Wrap" Text="TextBlock"/>
+        </ScrollViewer>
+        <Button x:ConnectionId='2' x:Name="but" Content="Button" HorizontalAlignment="Left" Margin="493,662,0,0" VerticalAlignment="Top"                       />
+
+        <Maps:MapControl x:ConnectionId='3' x:Name="MapControl" HorizontalAlignment="Left" Margin="886,662,0,0" VerticalAlignment="Top" />
+
+    </Grid>
+</Page>
+

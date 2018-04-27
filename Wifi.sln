@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wifi", "Wifi\Wifi.csproj", "{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|ARM.ActiveCfg = Debug|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|ARM.Build.0 = Debug|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|ARM.Deploy.0 = Debug|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x64.ActiveCfg = Debug|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x64.Build.0 = Debug|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x64.Deploy.0 = Debug|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x86.ActiveCfg = Debug|x86
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x86.Build.0 = Debug|x86
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Debug|x86.Deploy.0 = Debug|x86
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|ARM.ActiveCfg = Release|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|ARM.Build.0 = Release|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|ARM.Deploy.0 = Release|ARM
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x64.ActiveCfg = Release|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x64.Build.0 = Release|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x64.Deploy.0 = Release|x64
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x86.ActiveCfg = Release|x86
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x86.Build.0 = Release|x86
+		{A942EAFA-BCD6-4D90-84D9-D8581F0700FD}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {38C0804D-D2A8-4AA7-826B-35A8BCABC0CF}
+	EndGlobalSection
+EndGlobal
