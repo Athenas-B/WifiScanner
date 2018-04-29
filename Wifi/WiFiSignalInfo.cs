@@ -1,4 +1,5 @@
-﻿using Windows.Networking.Connectivity;
+﻿using System.Collections.Generic;
+using Windows.Networking.Connectivity;
 
 namespace Wifi
 {
@@ -13,6 +14,7 @@ namespace Wifi
         public int ChannelCenterFrequencyInKilohertz { get; set; }
         public NetworkSecuritySettings NetworkSecuritySettings { get; set; }
         public double RssiInDecibelMilliwatts { get; set; }
+        public HashSet<WiFiLocationtData> LocationData { get; set; }
 
         public override string ToString()
         {

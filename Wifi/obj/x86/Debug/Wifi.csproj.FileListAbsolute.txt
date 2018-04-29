@@ -337,7 +337,6 @@ C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\System.Xml.ReaderWriter.
 C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\System.Xml.XDocument.dll
 C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\System.Xml.XmlDocument.dll
 C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\System.Xml.XmlSerializer.dll
-C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\Wifi.csprojResolveAssemblyReference.cache
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\App.g.i.cs
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\App.g.cs
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\MainPage.g.i.cs

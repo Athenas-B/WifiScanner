@@ -15,12 +15,13 @@ namespace Wifi
 
         public WiFiAdapter WiFiAdapter { get; private set; }
       
-        public List<WiFiSignalInfo> Wifi { get; private set; }
+        public HashSet<WiFiSignalInfo> Wifi { get; private set; }
 
 
         public WifiScanner()
         {
-            Wifi = new List<WiFiSignalInfo>();
+            Wifi = new HashSet<WiFiSignalInfo>();
+            
             InitializeFirstAdapter();
         }
 
@@ -67,8 +68,8 @@ namespace Wifi
             {
                 await this.WiFiAdapter.ScanAsync();
                 var report = WiFiAdapter.NetworkReport;
-                Geolocator geolocator = new Geolocator();
-                Geoposition position = await geolocator.GetGeopositionAsync();
+                //Geolocator geolocator = new Geolocator();
+                //Geoposition position = await geolocator.GetGeopositionAsync();
 
                 foreach (var availableNetwork in report.AvailableNetworks)
                 {
