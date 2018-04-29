@@ -24331,21 +24331,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\olda9\\.nuget\\packages\\": {}
+    "C:\\Users\\olda9\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olda9\\source\\repos\\Wifi\\Wifi\\Wifi.csproj",
+      "projectUniqueName": "C:\\Users\\olda9\\Documents\\WifiScanner\\Wifi\\Wifi.csproj",
       "projectName": "Wifi",
-      "projectPath": "C:\\Users\\olda9\\source\\repos\\Wifi\\Wifi\\Wifi.csproj",
+      "projectPath": "C:\\Users\\olda9\\Documents\\WifiScanner\\Wifi\\Wifi.csproj",
       "packagesPath": "C:\\Users\\olda9\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olda9\\source\\repos\\Wifi\\Wifi\\obj\\",
+      "outputPath": "C:\\Users\\olda9\\Documents\\WifiScanner\\Wifi\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\"
+      ],
       "configFilePaths": [
         "C:\\Users\\olda9\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.Fallback.config"
       ],
       "originalTargetFrameworks": [
         "uap10.0.14393"
@@ -24360,18 +24365,12 @@
         }
       }
     },
-    "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": {
-        "target": "Package",
-        "version": "5.4.0"
-      }
-    },
     "frameworks": {
       "uap10.0.14393": {
         "dependencies": {
           "Microsoft.NETCore.UniversalWindowsPlatform": {
             "target": "Package",
-            "version": "5.4.0"
+            "version": "[5.4.0, )"
           }
         }
       }
