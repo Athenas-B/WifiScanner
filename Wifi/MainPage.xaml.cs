@@ -29,6 +29,7 @@ namespace Wifi
             this.InitializeComponent();
             WifiScanner = new WifiScanner();
             MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
+            
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
