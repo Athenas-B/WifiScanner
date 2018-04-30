@@ -99,7 +99,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WifiPointData.cs" />
+    <Compile Include="WiFiLocationtData.cs" />
     <Compile Include="WifiScanner.cs" />
     <Compile Include="WiFiSignalInfo.cs" />
   </ItemGroup>

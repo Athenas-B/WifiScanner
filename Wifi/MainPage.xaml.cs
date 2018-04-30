@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Popups;
 using Windows.Devices.Geolocation;
+using Windows.UI;
 
 // Dokumentaci k šabloně položky Prázdná stránka najdete na adrese https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x405
 
@@ -97,9 +98,28 @@ namespace Wifi
                     SelectedWifi.SignalBars = item.SignalBars;
                     WifiDetail.Text = SelectedWifi.GetTextDetail();
                     WifiList.SelectedItem = item;
+
+                    if (Recording) {
+                        Geolocator geolocator = new Geolocator();
+                        Geoposition position = await geolocator.GetGeopositionAsync(); //maybe move somewhere erlier in code to reduce delay? (+ rethink await)
+
+                        var locationData = new WiFiLocationtData();
+                        locationData.Position = position;
+                        locationData.RssiInDecibelMilliwatts = item.RssiInDecibelMilliwatts;
+                        locationData.SignalBars = item.SignalBars;
+                        
+                    }
                 }
             }
-            
+
+            if (SelectedWifi == null)
+            {
+                SelectedWifi.SignalBars = 0;
+                SelectedWifi.RssiInDecibelMilliwatts = 0;
+                WifiDetail.Text = SelectedWifi.GetTextDetail();
+            }
+
+
         }
 
         private void WifiList_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -174,6 +194,41 @@ namespace Wifi
         {
             // Display message showing the label of the command that was invoked
            // rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",   NotifyType.StatusMessage);
+        }
+
+        private MapPolygon createPolygon(WiFiLocationtData data) {
+            var mapPolygon = new MapPolygon
+            {
+                Path = new Geopath(new List<BasicGeoposition> {
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude +0.0005, Longitude=data.Position.Coordinate.Latitude-0.0005 },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-0.0005, Longitude=data.Position.Coordinate.Latitude-0.0005 },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-0.0005, Longitude=data.Position.Coordinate.Latitude+0.0005 },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude+0.0005, Longitude=data.Position.Coordinate.Latitude+0.0005 },
+                }),
+                ZIndex = 1,
+                FillColor = Colors.Red,
+                StrokeColor = Colors.Blue,
+                StrokeThickness = 3,
+                StrokeDashed = false,
+            };
+
+            return mapPolygon;
+
+        }
+        public void HighlightArea()
+        {
+            // Add MapPolygon to a layer on the map control.
+            var MyHighlights = new List<MapElement>();
+
+            MyHighlights.Add(mapPolygon);
+
+            var HighlightsLayer = new MapElementsLayer
+            {
+                ZIndex = 1,
+                MapElements = MyHighlights
+            };
+
+            MapControl.Layers.Add(HighlightsLayer);
         }
     }
 }

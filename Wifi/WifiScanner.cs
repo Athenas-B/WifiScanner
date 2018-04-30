@@ -57,8 +57,7 @@ namespace Wifi
             {
                 await this.WiFiAdapter.ScanAsync();
                 var report = WiFiAdapter.NetworkReport;
-                //Geolocator geolocator = new Geolocator();
-                //Geoposition position = await geolocator.GetGeopositionAsync();
+
 
                 foreach (var availableNetwork in report.AvailableNetworks)
                 {
