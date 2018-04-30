@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Windows.Networking.Connectivity;
 
 namespace Wifi
 {
 
-        public class WiFiSignalInfo
-        {
+        public class WiFiSignalInfo : IEquatable<WiFiSignalInfo>
+    {
         public string MacAddress { get; set; }
         public string Ssid { get; set; }
         public string NetworkKind { get; set; }
@@ -20,7 +21,40 @@ namespace Wifi
         {
             return Ssid +" : "+ MacAddress + " : " + NetworkKind + " : " + PhysicalKind + " : " + SignalBars + " : "  + ChannelCenterFrequencyInKilohertz  
                 + " : " + RssiInDecibelMilliwatts + " : " + NetworkSecuritySettings.NetworkEncryptionType + " : " + NetworkSecuritySettings.NetworkAuthenticationType ;
-        } 
+        }
+
+        public string GetTextDetail()
+        {
+            return Ssid + " : " + MacAddress + " : " + NetworkKind + " : " + PhysicalKind + " : " + SignalBars + " : " + ChannelCenterFrequencyInKilohertz
+                + " : " + RssiInDecibelMilliwatts + " : " + NetworkSecuritySettings.NetworkEncryptionType + " : " + NetworkSecuritySettings.NetworkAuthenticationType;
+        }
+
+        public override bool Equals(object obj)
+        {
+            return Equals(obj as WiFiSignalInfo);
+        }
+
+        public bool Equals(WiFiSignalInfo other)
+        {
+            return other != null &&
+                   MacAddress == other.MacAddress &&
+                   Ssid == other.Ssid &&
+                   NetworkKind == other.NetworkKind &&
+                   PhysicalKind == other.PhysicalKind;//&&
+                   //EqualityComparer<NetworkSecuritySettings>.Default.Equals(NetworkSecuritySettings, other.NetworkSecuritySettings);
+                   //NetworkSecuritySettings.Equals(NetworkSecuritySettings, other.NetworkSecuritySettings);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = -875630175;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(MacAddress);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(Ssid);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(NetworkKind);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(PhysicalKind);
+            hashCode = hashCode * -1521134295 + EqualityComparer<NetworkSecuritySettings>.Default.GetHashCode(NetworkSecuritySettings);
+            return hashCode;
+        }
     }
    
 }

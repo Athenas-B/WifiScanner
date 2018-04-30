@@ -24,6 +24,7 @@ namespace Wifi
     public sealed partial class MainPage : Page
     {
         private WifiScanner WifiScanner;
+        private WiFiSignalInfo selectedWifi;
         public MainPage()
         {
             this.InitializeComponent();
@@ -33,7 +34,7 @@ namespace Wifi
             WifiList.Items.Clear();
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 4);
-            timer.Tick += Timer_Tick;
+            timer.Tick += NetworkScan;
             timer.Start();
         }
 
@@ -44,21 +45,35 @@ namespace Wifi
            // MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
         }
 
-        private async void Timer_Tick(object sender, object e)
+        private async void NetworkScan(object sender, object e)
         {
             await WifiScanner.ScanForNetworks();
             WifiList.Items.Clear();
             foreach (var item in WifiScanner.Wifi)
             {
                 WifiList.Items.Add(item);
+
+                if (item.Equals(selectedWifi)) { //if there is selected network refresh its info
+                    selectedWifi = item;
+                    WifiDetail.Text = selectedWifi.GetTextDetail();
+                    WifiList.SelectedItem = selectedWifi;
+                }
             }
             
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            WifiScanner.StopScanning();
+            
         }
 
+        private void WifiList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (WifiList.SelectedItem != null)
+            {
+                selectedWifi = (WiFiSignalInfo)WifiList.SelectedItem;
+            }
+            WifiDetail.Text = selectedWifi.GetTextDetail();
+        }
     }
 }
