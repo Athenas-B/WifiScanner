@@ -75,5 +75,10 @@ namespace Wifi
             }
             WifiDetail.Text = selectedWifi.GetTextDetail();
         }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+            selectedWifi.LocationData.Clear();
+        }
     }
 }
