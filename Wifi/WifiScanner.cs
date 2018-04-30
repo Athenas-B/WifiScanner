@@ -22,7 +22,7 @@ namespace Wifi
         {
             Wifi = new HashSet<WiFiSignalInfo>();
             
-            InitializeFirstAdapter();
+            // InitializeFirstAdapter();
         }
 
         public async Task InitializeFirstAdapter()
@@ -48,18 +48,7 @@ namespace Wifi
             }
         }
 
-        public async Task ScanWifiRepeteadly(int seconds) {
-            DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = new TimeSpan(0, 0, seconds);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-        public async Task StopScanning() { }
-
-        private async void Timer_Tick(object sender, object e)
-        {
-            await ScanForNetworks();
-        }
+      
 
         public async Task ScanForNetworks()
         {

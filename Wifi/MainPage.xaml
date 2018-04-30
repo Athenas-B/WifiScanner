@@ -12,14 +12,14 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,237.8,176.6">
-        <Button x:Name="Record" Content="Record" HorizontalAlignment="Left" Margin="10,621,0,0" VerticalAlignment="Top" Height="68" Width="185" Click="Button_Click"/>
-        <Button x:Name="Load" Content="Load from file" HorizontalAlignment="Left" Margin="256,623,0,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+        <Button x:Name="Record" Content="Record" HorizontalAlignment="Left" Margin="10,621,0,0" VerticalAlignment="Top" Height="68" Width="185" Click="Record_Click"/>
+        <Button x:Name="Load" Content="Load from file" HorizontalAlignment="Left" Margin="256,623,0,0" VerticalAlignment="Top" Click="Load_Click"/>
 
         <Maps:MapControl x:Name="MapControl" HorizontalAlignment="Left" Margin="519,38,0,0" VerticalAlignment="Top" Height="634" Width="917" />
         <ListBox x:Name="WifiList" HorizontalAlignment="Left" Height="406" Margin="10,54,0,0" VerticalAlignment="Top" Width="467" SelectionChanged="WifiList_SelectionChanged">
             <x:String>Selectable list of avaible wifi networks</x:String>
         </ListBox>
-        <Button x:Name="Save" Content="Save to file" HorizontalAlignment="Left" Margin="256,656,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="Save" Content="Save to file" HorizontalAlignment="Left" Margin="256,656,0,0" VerticalAlignment="Top" Width="113" Click="Save_Click"/>
         <TextBlock x:Name="WifiDetail" HorizontalAlignment="Left" Margin="10,488,0,0" TextWrapping="Wrap" Text="Detailed info about selected network" VerticalAlignment="Top" Height="98" Width="467"/>
         <Button x:Name="Clear" Content="Clear captured data" HorizontalAlignment="Left" Margin="374,633,0,0" VerticalAlignment="Top" Click="Clear_Click"/>
 

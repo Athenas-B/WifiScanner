@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using Windows.UI.Xaml.Controls.Maps;
+using Windows.UI.Popups;
+using Windows.Devices.Geolocation;
 
 // Dokumentaci k šabloně položky Prázdná stránka najdete na adrese https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x405
 
@@ -24,25 +26,62 @@ namespace Wifi
     public sealed partial class MainPage : Page
     {
         private WifiScanner WifiScanner;
-        private WiFiSignalInfo selectedWifi;
+        private WiFiSignalInfo SelectedWifi;
+        private bool Recording = false;
         public MainPage()
         {
             this.InitializeComponent();
             WifiScanner = new WifiScanner();
-            MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
+            SetEviroment();
+        }
 
+        private async void SetEviroment() {
+            try
+            {
+                await WifiScanner.InitializeFirstAdapter();
+            }
+            catch (Exception)
+            {
+
+                ShowError("WiFi service error. Please enable WiFi access and restart this app.");
+                return;
+            }
             WifiList.Items.Clear();
             DispatcherTimer timer = new DispatcherTimer();
             timer.Interval = new TimeSpan(0, 0, 4);
             timer.Tick += NetworkScan;
             timer.Start();
+
+            MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
+            SetCurrentLocation();
         }
+        private async void SetCurrentLocation() {
+            var accessStatus = await Geolocator.RequestAccessAsync();
+            switch (accessStatus)
+            {
+                case GeolocationAccessStatus.Allowed:
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-           
+                    // Get the current location.
+                    Geolocator geolocator = new Geolocator();
+                    Geoposition pos = await geolocator.GetGeopositionAsync();
+                    Geopoint myLocation = pos.Coordinate.Point;
 
-           // MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
+                    // Set the map location.
+                    MapControl.Center = myLocation;
+                    MapControl.ZoomLevel = 19;
+                    MapControl.LandmarksVisible = true;
+                    break;
+
+                case GeolocationAccessStatus.Denied:
+                    // Handle the case  if access to location is denied.
+                    ShowError("This app needs Location services enabled. Please enable them and restart this app.");
+                    break;
+
+                case GeolocationAccessStatus.Unspecified:
+                    // Handle the case if  an unspecified error occurs.
+                    ShowError("Location acces unspecified. This app needs Location services enabled. Please enable them and restart this app.");
+                    break;
+            }
         }
 
         private async void NetworkScan(object sender, object e)
@@ -53,17 +92,13 @@ namespace Wifi
             {
                 WifiList.Items.Add(item);
 
-                if (item.Equals(selectedWifi)) { //if there is selected network refresh its info
-                    selectedWifi = item;
-                    WifiDetail.Text = selectedWifi.GetTextDetail();
-                    WifiList.SelectedItem = selectedWifi;
+                if (item.Equals(SelectedWifi)) { //if there is selected network refresh its info
+                    SelectedWifi.RssiInDecibelMilliwatts = item.RssiInDecibelMilliwatts;
+                    SelectedWifi.SignalBars = item.SignalBars;
+                    WifiDetail.Text = SelectedWifi.GetTextDetail();
+                    WifiList.SelectedItem = item;
                 }
             }
-            
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
             
         }
 
@@ -71,14 +106,74 @@ namespace Wifi
         {
             if (WifiList.SelectedItem != null)
             {
-                selectedWifi = (WiFiSignalInfo)WifiList.SelectedItem;
+                SelectedWifi = (WiFiSignalInfo)WifiList.SelectedItem;
             }
-            WifiDetail.Text = selectedWifi.GetTextDetail();
+            WifiDetail.Text = SelectedWifi.GetTextDetail();
         }
 
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
-            selectedWifi.LocationData.Clear();
+            SelectedWifi.LocationData.Clear();
+        }
+
+
+        private async void Record_Click(object sender, RoutedEventArgs e)
+        {
+            if (SelectedWifi == null)
+            {
+                ShowError("No selected network!");
+                return;
+            }
+           
+
+            Recording = !Recording;
+            if (Recording)
+            {
+                Record.Content = "Stop";
+            }
+            else {
+                Record.Content = "Record";
+            }
+
+          
+
+
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private async void ShowError(string text)
+        {
+            // Create the message dialog and set its content
+            var messageDialog = new MessageDialog(text);
+
+            // Add commands and set their callbacks; both buttons use the same callback function instead of inline event handlers
+            messageDialog.Commands.Add(new UICommand(
+                "Close",
+                new UICommandInvokedHandler(this.CommandInvokedHandler)));
+
+            // Set the command that will be invoked by default
+            messageDialog.DefaultCommandIndex = 0;
+
+            // Set the command to be invoked when escape is pressed
+            messageDialog.CancelCommandIndex = 0;
+
+            // Show the message dialog
+            await messageDialog.ShowAsync();
+        }
+
+        private void CommandInvokedHandler(IUICommand command)
+        {
+            // Display message showing the label of the command that was invoked
+           // rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",   NotifyType.StatusMessage);
         }
     }
 }
