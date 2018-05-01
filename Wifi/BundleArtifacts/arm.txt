@@ -1,0 +1,2 @@
+MainPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.0.0_ARM_Debug.appx
+SymbolPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\AppPackages\Wifi_1.0.0.0_Debug_Test\Wifi_1.0.0.0_ARM_Debug.appxsym
