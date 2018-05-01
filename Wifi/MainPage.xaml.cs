@@ -16,6 +16,9 @@ using Windows.UI.Xaml.Controls.Maps;
 using Windows.UI.Popups;
 using Windows.Devices.Geolocation;
 using Windows.UI;
+using Windows.Storage;
+using Windows.Storage.Streams;
+using System.Runtime.Serialization;
 
 // Dokumentaci k šabloně položky Prázdná stránka najdete na adrese https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x405
 
@@ -104,16 +107,18 @@ namespace Wifi
                     WifiList.SelectedItem = item;
 
                     if (Recording) {
-                        
-                        
+
+
 
                         var locationData = new WiFiLocationtData
                         {
-                            Position = geoPosition,
+                            Latitude = geoPosition.Coordinate.Latitude,
+                            Longitude = geoPosition.Coordinate.Longitude,
                             RssiInDecibelMilliwatts = item.RssiInDecibelMilliwatts,
                             SignalBars = item.SignalBars
                         };
 
+                        SelectedWifi.LocationData.Add(locationData);
                         CreatePolygon(locationData);
                         
                     }
@@ -132,7 +137,7 @@ namespace Wifi
 
         private void WifiList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (WifiList.SelectedItem != null)
+            if (WifiList.SelectedItem != null && (SelectedWifi==null || !WifiList.SelectedItem.Equals(SelectedWifi) ) )
             {
                 SelectedWifi = (WiFiSignalInfo)WifiList.SelectedItem;
             }
@@ -168,14 +173,117 @@ namespace Wifi
 
         }
 
-        private void Load_Click(object sender, RoutedEventArgs e)
+        private async void Load_Click(object sender, RoutedEventArgs e)
         {
+            var openPicker = new Windows.Storage.Pickers.FileOpenPicker();
+            openPicker.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
 
+            openPicker.FileTypeFilter.Add( ".wrec" );
+
+
+            Windows.Storage.StorageFile file = await openPicker.PickSingleFileAsync();
+            if (file != null)
+            {
+
+                // Prevent updates to the remote version of the file until
+                // we finish making changes and call CompleteUpdatesAsync.
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+
+                
+                var Serializer = new DataContractSerializer(typeof(WiFiSignalInfo));
+                using (var stream = await file.OpenStreamForReadAsync())
+                {
+                    SelectedWifi = (WiFiSignalInfo)Serializer.ReadObject(stream);
+
+                    foreach (var item in SelectedWifi.LocationData)
+                    {
+                        CreatePolygon(item);
+                    }
+                }
+                
+
+
+                // write to file
+                //await Windows.Storage.FileIO.WriteTextAsync(file, file.Name);
+
+                // Let Windows know that we're finished changing the file so
+                // the other app can update the remote version of the file.
+                // Completing updates may require Windows to ask for user input.
+                Windows.Storage.Provider.FileUpdateStatus status =
+                    await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+
+                }
+                else
+                {
+                    ShowError("File " + file.Name + " couldn't be saved.");
+                }
+            }
+            else
+            {
+                //this.textBlock.Text = "Operation cancelled.";
+            }
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private async void Save_Click(object sender, RoutedEventArgs e)
         {
-           
+            var savePicker = new Windows.Storage.Pickers.FileSavePicker();
+            savePicker.SuggestedStartLocation =
+                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+            // Dropdown of file types the user can save the file as
+            savePicker.FileTypeChoices.Add("Wifi Records", new List<string>() { ".wrec" });
+            // Default file name if the user does not type one in or select a file to replace
+            savePicker.SuggestedFileName = "New Record";
+
+            Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
+            if (file != null)
+            {
+
+                // Prevent updates to the remote version of the file until
+                // we finish making changes and call CompleteUpdatesAsync.
+                Windows.Storage.CachedFileManager.DeferUpdates(file);
+
+
+                IRandomAccessStream raStream = await file.OpenAsync(FileAccessMode.ReadWrite);
+
+                using (IOutputStream outStream = raStream.GetOutputStreamAt(0))
+                {
+
+                    // Serialize the Session State. 
+
+                    DataContractSerializer serializer = new DataContractSerializer(typeof(WiFiSignalInfo));
+
+                    serializer.WriteObject(outStream.AsStreamForWrite(), SelectedWifi);
+
+                    await outStream.FlushAsync();
+                    outStream.Dispose(); //  
+                    raStream.Dispose();
+                }
+
+                
+                // write to file
+                //await Windows.Storage.FileIO.WriteTextAsync(file, file.Name);
+               
+                // Let Windows know that we're finished changing the file so
+                // the other app can update the remote version of the file.
+                // Completing updates may require Windows to ask for user input.
+                Windows.Storage.Provider.FileUpdateStatus status =
+                    await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
+                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
+                {
+                    
+                }
+                else
+                {
+                    ShowError("File " + file.Name + " couldn't be saved.");
+                }
+            }
+            else
+            {
+                //this.textBlock.Text = "Operation cancelled.";
+            }
         }
 
         private async void ShowError(string text)
@@ -209,10 +317,10 @@ namespace Wifi
             var mapPolygon = new MapPolygon
             {
                 Path = new Geopath(new List<BasicGeoposition> {
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude +size, Longitude=data.Position.Coordinate.Longitude-size },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-size, Longitude=data.Position.Coordinate.Longitude-size },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-size, Longitude=data.Position.Coordinate.Longitude+size },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude+size, Longitude=data.Position.Coordinate.Longitude+size },
+                    new BasicGeoposition() {Latitude=data.Latitude +size, Longitude=data.Longitude-size },
+                    new BasicGeoposition() {Latitude=data.Latitude-size, Longitude=data.Longitude-size },
+                    new BasicGeoposition() {Latitude=data.Latitude-size, Longitude=data.Longitude+size },
+                    new BasicGeoposition() {Latitude=data.Latitude+size, Longitude=data.Longitude+size },
                 }),
                 ZIndex = 1,
                 StrokeThickness = 1,

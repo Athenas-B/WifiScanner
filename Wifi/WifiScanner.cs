@@ -71,7 +71,8 @@ namespace Wifi
                         availableNetwork.ChannelCenterFrequencyInKilohertz,
                         NetworkKind = availableNetwork.NetworkKind.ToString(),
                         PhysicalKind = availableNetwork.PhyKind.ToString(),
-                        NetworkSecuritySettings = availableNetwork.SecuritySettings,
+                        NetworkAuthenticationType = availableNetwork.SecuritySettings.NetworkAuthenticationType.ToString(),
+                        NetworkEncryptionType = availableNetwork.SecuritySettings.NetworkEncryptionType.ToString(),
                         RssiInDecibelMilliwatts = availableNetwork.NetworkRssiInDecibelMilliwatts
                         
                     };
