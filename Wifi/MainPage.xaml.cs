@@ -69,7 +69,7 @@ namespace Wifi
 
                     // Set the map location.
                     MapControl.Center = myLocation;
-                    MapControl.ZoomLevel = 19;
+                    MapControl.ZoomLevel = 20;
                     MapControl.LandmarksVisible = true;
                     break;
 
@@ -87,6 +87,8 @@ namespace Wifi
 
         private async void NetworkScan(object sender, object e)
         {
+            Geolocator geolocator = new Geolocator();
+            Geoposition geoPosition = await geolocator.GetGeopositionAsync(); //maybe move somewhere erlier in code to reduce delay? (+ rethink await)
             await WifiScanner.ScanForNetworks();
             WifiList.Items.Clear();
             foreach (var item in WifiScanner.Wifi)
@@ -100,19 +102,23 @@ namespace Wifi
                     WifiList.SelectedItem = item;
 
                     if (Recording) {
-                        Geolocator geolocator = new Geolocator();
-                        Geoposition position = await geolocator.GetGeopositionAsync(); //maybe move somewhere erlier in code to reduce delay? (+ rethink await)
+                        
+                        
 
-                        var locationData = new WiFiLocationtData();
-                        locationData.Position = position;
-                        locationData.RssiInDecibelMilliwatts = item.RssiInDecibelMilliwatts;
-                        locationData.SignalBars = item.SignalBars;
+                        var locationData = new WiFiLocationtData
+                        {
+                            Position = geoPosition,
+                            RssiInDecibelMilliwatts = item.RssiInDecibelMilliwatts,
+                            SignalBars = item.SignalBars
+                        };
+
+                        CreatePolygon(locationData);
                         
                     }
                 }
             }
 
-            if (SelectedWifi == null)
+            if (WifiList.SelectedItem == null && SelectedWifi!=null)
             {
                 SelectedWifi.SignalBars = 0;
                 SelectedWifi.RssiInDecibelMilliwatts = 0;
@@ -196,22 +202,24 @@ namespace Wifi
            // rootPage.NotifyUser("The '" + command.Label + "' command has been selected.",   NotifyType.StatusMessage);
         }
 
-        private MapPolygon createPolygon(WiFiLocationtData data) {
+        private MapPolygon CreatePolygon(WiFiLocationtData data) {
+            const double size = 0.000005;
             var mapPolygon = new MapPolygon
             {
                 Path = new Geopath(new List<BasicGeoposition> {
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude +0.0005, Longitude=data.Position.Coordinate.Latitude-0.0005 },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-0.0005, Longitude=data.Position.Coordinate.Latitude-0.0005 },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-0.0005, Longitude=data.Position.Coordinate.Latitude+0.0005 },
-                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude+0.0005, Longitude=data.Position.Coordinate.Latitude+0.0005 },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude +size, Longitude=data.Position.Coordinate.Longitude-size },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-size, Longitude=data.Position.Coordinate.Longitude-size },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude-size, Longitude=data.Position.Coordinate.Longitude+size },
+                    new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude+size, Longitude=data.Position.Coordinate.Longitude+size },
                 }),
                 ZIndex = 1,
                 FillColor = Colors.Red,
-                StrokeColor = Colors.Blue,
-                StrokeThickness = 3,
+                StrokeColor = Colors.Red,
+                StrokeThickness = 1,
                 StrokeDashed = false,
+                Visible = true
             };
-
+            MapControl.MapElements.Add(mapPolygon);
             return mapPolygon;
 
         }
@@ -220,15 +228,11 @@ namespace Wifi
             // Add MapPolygon to a layer on the map control.
             var MyHighlights = new List<MapElement>();
 
-            MyHighlights.Add(mapPolygon);
+            //MyHighlights.Add(mapPolygon);
 
-            var HighlightsLayer = new MapElementsLayer
-            {
-                ZIndex = 1,
-                MapElements = MyHighlights
-            };
+            
 
-            MapControl.Layers.Add(HighlightsLayer);
+            //MapControl.MapElements.Add
         }
     }
 }
