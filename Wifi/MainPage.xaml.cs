@@ -27,12 +27,14 @@ namespace Wifi
     public sealed partial class MainPage : Page
     {
         private WifiScanner WifiScanner;
+        private Geolocator geolocator;
         private WiFiSignalInfo SelectedWifi;
         private bool Recording = false;
         public MainPage()
         {
             this.InitializeComponent();
             WifiScanner = new WifiScanner();
+            geolocator = new Geolocator();
             SetEviroment();
         }
 
@@ -87,7 +89,7 @@ namespace Wifi
 
         private async void NetworkScan(object sender, object e)
         {
-            Geolocator geolocator = new Geolocator();
+            
             Geoposition geoPosition = await geolocator.GetGeopositionAsync(); //maybe move somewhere erlier in code to reduce delay? (+ rethink await)
             await WifiScanner.ScanForNetworks();
             WifiList.Items.Clear();
@@ -173,7 +175,7 @@ namespace Wifi
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            
+           
         }
 
         private async void ShowError(string text)
@@ -213,12 +215,22 @@ namespace Wifi
                     new BasicGeoposition() {Latitude=data.Position.Coordinate.Latitude+size, Longitude=data.Position.Coordinate.Longitude+size },
                 }),
                 ZIndex = 1,
-                FillColor = Colors.Red,
-                StrokeColor = Colors.Red,
                 StrokeThickness = 1,
                 StrokeDashed = false,
                 Visible = true
             };
+
+            byte green = 255;
+            if (true) {
+                green = (byte)((255 / 4) * data.SignalBars);
+            }
+
+            mapPolygon.FillColor = Color.FromArgb(255, 255, green, 0);
+
+            mapPolygon.StrokeColor = mapPolygon.FillColor;
+
+
+
             MapControl.MapElements.Add(mapPolygon);
             return mapPolygon;
 

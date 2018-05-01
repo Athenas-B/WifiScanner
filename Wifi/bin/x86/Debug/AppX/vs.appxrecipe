@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-01T09:29:29.034</Modified>
+      <Modified>2018-05-01T09:44:10.786</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Wifi.exe">
       <PackagePath>entrypoint\Wifi.exe</PackagePath>
-      <Modified>2018-05-01T09:29:28.682</Modified>
+      <Modified>2018-05-01T09:44:10.403</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -548,7 +548,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\Wifi.exe">
       <PackagePath>Wifi.exe</PackagePath>
-      <Modified>2018-05-01T09:29:29.029</Modified>
+      <Modified>2018-05-01T09:44:10.778</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
