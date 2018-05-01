@@ -429,3 +429,4 @@ C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\x86\Debug\Wifi.csprojResolveAssemblyReference.cache
+C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\ForBundle\AppxManifest.xml

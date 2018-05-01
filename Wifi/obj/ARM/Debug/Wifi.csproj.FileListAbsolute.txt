@@ -212,3 +212,5 @@ C:\Users\olda9\Documents\WifiScanner\Wifi\obj\ARM\Debug\MultipleQualifiersPerDim
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\ARM\Debug\resources.en-us.resfiles
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\ARM\Debug\resources.en-us.resfiles.intermediate
 C:\Users\olda9\Documents\WifiScanner\Wifi\obj\ARM\Debug\ProjectArchitectures.txt
+C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Core\ForBundle\AppxManifest.xml
+C:\Users\olda9\Documents\WifiScanner\Wifi\obj\ARM\Debug\Wifi.csprojResolveAssemblyReference.cache

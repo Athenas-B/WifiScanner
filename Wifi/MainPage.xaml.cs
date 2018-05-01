@@ -68,9 +68,11 @@ namespace Wifi
                 case GeolocationAccessStatus.Allowed:
 
                     // Get the current location.
-                    Geolocator geolocator = new Geolocator();
                     Geoposition pos = await geolocator.GetGeopositionAsync();
                     Geopoint myLocation = pos.Coordinate.Point;
+
+                    geolocator.ReportInterval = 4;
+                    geolocator.StatusChanged += GeoScan;
 
                     // Set the map location.
                     MapControl.Center = myLocation;
@@ -90,6 +92,7 @@ namespace Wifi
             }
         }
 
+        private async void GeoScan(object sender, object e) { }
         private async void NetworkScan(object sender, object e)
         {
             

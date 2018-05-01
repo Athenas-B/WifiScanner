@@ -7,7 +7,7 @@
 
     Další informace o souborech manifestů balíčků získáte na adrese http://go.microsoft.com/fwlink/?LinkID=241727.
   -->
-  <Identity Name="9b057608-3f31-4ae9-b983-261ff5c77f1a" Publisher="CN=olda9" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="9b057608-3f31-4ae9-b983-261ff5c77f1a" Publisher="CN=olda9" Version="1.0.1.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="9b057608-3f31-4ae9-b983-261ff5c77f1a" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>Wifi</DisplayName>

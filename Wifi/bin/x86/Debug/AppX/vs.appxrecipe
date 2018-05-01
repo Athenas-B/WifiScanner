@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>E956DDD54D6E316CAA5D4E74378824D7795C13D1A5A01183BE64E579230DB06C</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>7E75AE295DE374FBA2CFAABCBAA0733138DDA496BB0869E397A6AA901B878FC7</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>9b057608-3f31-4ae9-b983-261ff5c77f1a_1.0.0.0_x86__8py1xj7rspjjy</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9b057608-3f31-4ae9-b983-261ff5c77f1a_8py1xj7rspjjy!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9b057608-3f31-4ae9-b983-261ff5c77f1a</RegisteredPackageID>
@@ -31,13 +31,13 @@
     <AppXManifest Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-01T10:47:48.099</Modified>
+      <Modified>2018-05-01T15:36:30.274</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Wifi.exe">
       <PackagePath>entrypoint\Wifi.exe</PackagePath>
-      <Modified>2018-05-01T10:47:47.818</Modified>
+      <Modified>2018-05-01T15:36:29.975</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -544,11 +544,11 @@
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-01T09:11:06.518</Modified>
+      <Modified>2018-05-01T15:34:41.390</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\Wifi.exe">
       <PackagePath>Wifi.exe</PackagePath>
-      <Modified>2018-05-01T10:47:48.094</Modified>
+      <Modified>2018-05-01T15:36:30.265</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
