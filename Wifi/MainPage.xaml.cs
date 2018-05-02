@@ -19,6 +19,8 @@ using Windows.UI;
 using Windows.Storage;
 using Windows.Storage.Streams;
 using System.Runtime.Serialization;
+using Windows.Services.Maps;
+using Windows.Graphics.Display;
 
 // Dokumentaci k šabloně položky Prázdná stránka najdete na adrese https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x405
 
@@ -39,6 +41,9 @@ namespace Wifi
             WifiScanner = new WifiScanner();
             geolocator = new Geolocator();
             SetEviroment();
+
+            DisplayOrientations orientations = DisplayOrientations.Landscape;
+            DisplayInformation.AutoRotationPreferences = orientations;
         }
 
         private async void SetEviroment() {
@@ -58,7 +63,8 @@ namespace Wifi
             timer.Tick += NetworkScan;
             timer.Start();
 
-            MapControl.MapServiceToken = "Ai-JrzIrH33ZLoj7rtSUdwLYliMcYfetOTp_cGmu85gWntcUSD6SOB1OmiSw3eB6";
+            MapControl.MapServiceToken = "iDgeTFKL0vl1CvuXfH6M~8Eh2z7SVgda8C7sbKY-FQQ~AlC9E7_6aw-ukLJ-KDpRRmBkJomKLpNjZBwEwLppOIjSeQx4vXPsI6FKhAPekkaX";
+            MapService.ServiceToken = "iDgeTFKL0vl1CvuXfH6M~8Eh2z7SVgda8C7sbKY-FQQ~AlC9E7_6aw-ukLJ-KDpRRmBkJomKLpNjZBwEwLppOIjSeQx4vXPsI6FKhAPekkaX";
             SetCurrentLocation();
         }
         private async void SetCurrentLocation() {
