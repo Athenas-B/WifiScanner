@@ -1,2 +1,6 @@
-MainPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.1.0_ARM_Debug.appx
-SymbolPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\AppPackages\Wifi_1.0.1.0_Debug_Test\Wifi_1.0.1.0_ARM_Debug.appxsym
+MainPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.2.0_ARM_Debug.appx
+SymbolPackage=C:\Users\olda9\Documents\WifiScanner\Wifi\AppPackages\Wifi_1.0.2.0_Debug_Test\Wifi_1.0.2.0_ARM_Debug.appxsym
+ResourcePack=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.2.0_scale-100.appx
+ResourcePack=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.2.0_scale-125.appx
+ResourcePack=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.2.0_scale-150.appx
+ResourcePack=C:\Users\olda9\Documents\WifiScanner\Wifi\bin\ARM\Debug\Wifi_1.0.2.0_scale-400.appx

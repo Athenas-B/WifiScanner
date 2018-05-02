@@ -44,6 +44,9 @@ namespace Wifi
 
             DisplayOrientations orientations = DisplayOrientations.Landscape;
             DisplayInformation.AutoRotationPreferences = orientations;
+            //Application.Current.Resources["ApplicationPageBackgroundThemeBrush"] = (Color.FromArgb(255, 217, 217, 217));
+            grid.Background = new SolidColorBrush(Color.FromArgb(255,217,217,217));
+            //WifiDetailBorder.Background = new SolidColorBrush(Color.FromArgb(255, 255, 255, 255));
         }
 
         private async void SetEviroment() {
@@ -156,6 +159,9 @@ namespace Wifi
         private void Clear_Click(object sender, RoutedEventArgs e)
         {
             SelectedWifi.LocationData.Clear();
+            MapControl.MapElements.Clear();
+
+            //UseBars_Checked2(sender, e);
         }
 
 
@@ -331,7 +337,7 @@ namespace Wifi
                     new BasicGeoposition() {Latitude=data.Latitude-size, Longitude=data.Longitude+size },
                     new BasicGeoposition() {Latitude=data.Latitude+size, Longitude=data.Longitude+size },
                 }),
-                ZIndex = 1,
+                //ZIndex = 1,
                 StrokeThickness = 1,
                 StrokeDashed = false,
                 Visible = true
@@ -362,6 +368,76 @@ namespace Wifi
             
 
             //MapControl.MapElements.Add
+        }
+
+        private async void UseBars_Checked(object sender, RoutedEventArgs e) { }
+        private async void UseBars_Checked2(object sender, RoutedEventArgs e)
+        {
+            Geoposition geoPosition = await geolocator.GetGeopositionAsync();
+            double step = 0.000001;
+
+            var last = new WiFiLocationtData
+            {
+
+                Latitude = geoPosition.Coordinate.Latitude,
+                Longitude = geoPosition.Coordinate.Longitude,
+                RssiInDecibelMilliwatts = SelectedWifi.RssiInDecibelMilliwatts,
+                SignalBars = SelectedWifi.SignalBars
+            };
+
+            for (int i = 0; i < 100; i++)
+            {
+                Random r = new Random();
+                int iNum;
+                int result;
+
+                iNum = r.Next(-20, 20); //put whatever range you want in here from negative to positive 
+                if (iNum == 0) iNum = 1;
+                result = iNum / (int)Math.Abs(iNum);
+
+
+                int result2;
+
+                iNum = r.Next(-20, 20); //put whatever range you want in here from negative to positive 
+                if (iNum == 0) iNum = 1;
+                result2 = iNum / (int)Math.Abs(iNum);
+
+                WiFiLocationtData locationData2 = new WiFiLocationtData
+                {
+
+
+                    Latitude = last.Latitude + (step * result),
+                    Longitude = last.Longitude + (step * result2),
+                    RssiInDecibelMilliwatts = last.RssiInDecibelMilliwatts + result*2,
+                    SignalBars = (byte )(last.SignalBars + result2)
+                };
+
+                if (locationData2.SignalBars > 4)
+                {
+                    locationData2.SignalBars = 4;
+                }
+                if (locationData2.SignalBars < 1)
+                {
+                    locationData2.SignalBars = 1;
+                }
+
+                if (locationData2.RssiInDecibelMilliwatts > -31)
+                {
+                    locationData2.RssiInDecibelMilliwatts = -31;
+                }
+                if (locationData2.RssiInDecibelMilliwatts < -81)
+                {
+                    locationData2.RssiInDecibelMilliwatts = -81;
+                }
+
+
+                SelectedWifi.LocationData.Add(locationData2);
+                CreatePolygon(locationData2);
+
+                last = locationData2;
+            }
+
+            Clear.Content = SelectedWifi.LocationData.Count;
         }
     }
 }

@@ -11,6 +11,14 @@
     <AppxShowAllApps>False</AppxShowAllApps>
     <AppxBuildConfigurationSelection>x86|x64|arm</AppxBuildConfigurationSelection>
     <PackageOptionalProjectsInIdeBuilds>False</PackageOptionalProjectsInIdeBuilds>
+    <AppIconSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</AppIconSource>
+    <SplashScreenSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner Splash.png</SplashScreenSource>
+    <Source>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</Source>
+    <SmallTileSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</SmallTileSource>
+    <MediumTileSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</MediumTileSource>
+    <WideTileSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</WideTileSource>
+    <LargeTileSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</LargeTileSource>
+    <PackageLogoSource>C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\WiFi Scanner.png</PackageLogoSource>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DeviceId>30F105C9-681E-420b-A277-7C086EAD8A4E</DeviceId>

@@ -40,14 +40,26 @@ namespace Wifi
         public override string ToString()
         {
 
-            return Ssid +" : "+ MacAddress + " : " + NetworkKind + " : " + PhysicalKind + " : " + SignalBars + " : "  + ChannelCenterFrequencyInKilohertz  
-                + " : " + RssiInDecibelMilliwatts + " : " + NetworkEncryptionType + " : " + NetworkAuthenticationType ;
+            return Ssid +" : "+ MacAddress + " : "  + ChannelCenterFrequencyInKilohertz  + "Khz ";
         }
 
         public string GetTextDetail()
         {
-            return Ssid + " : " + MacAddress + " : " + NetworkKind + " : " + PhysicalKind + " : " + SignalBars + " : " + ChannelCenterFrequencyInKilohertz
-                + " : " + RssiInDecibelMilliwatts + " : " + NetworkEncryptionType + " : " + NetworkAuthenticationType;
+            string text = "";
+            text += "SSID: " + Ssid + "\t\t\t";
+            text += "Mac: " + MacAddress + "\n";
+            text += "Frequency: " + ChannelCenterFrequencyInKilohertz + "kHz\n";
+            text += "RSSI: " + RssiInDecibelMilliwatts + " DecibelMilliwatts\t\t";
+            text += "Signal bars: " + SignalBars + "\n";
+            text += "Encryption type: " + NetworkEncryptionType + "\t\t";
+            text += "Authentication type: " + NetworkAuthenticationType + "\n";
+            text += "Network kind: " + NetworkKind + "\t";
+            text += "Physical Kind: " + PhysicalKind + "\n";
+
+            return text;
+
+            //return Ssid + " : " + MacAddress + " : " + NetworkKind + " : " + PhysicalKind + " : " + SignalBars + " : " + ChannelCenterFrequencyInKilohertz
+            //    + " : " + RssiInDecibelMilliwatts + " : " + NetworkEncryptionType + " : " + NetworkAuthenticationType;
         }
 
         public override bool Equals(object obj)

@@ -19,25 +19,25 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>B82F8EC09B4F795D413F2BBDB7C1C741B8B181C2CE9DFE30B9AC0CE9A8529FC7</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>9b057608-3f31-4ae9-b983-261ff5c77f1a_1.0.1.0_x86__8py1xj7rspjjy</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>2BBB95D9CA9BB30B1B5055081A2E79C6C46AA7FC00ABD758A43DD48B1DDC2007</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>9b057608-3f31-4ae9-b983-261ff5c77f1a_1.0.2.0_x86__8py1xj7rspjjy</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>9b057608-3f31-4ae9-b983-261ff5c77f1a_8py1xj7rspjjy!App</RegisteredUserModeAppID>
     <RegisteredPackageID>9b057608-3f31-4ae9-b983-261ff5c77f1a</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=olda9</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.1.0</RegisteredVersion>
+    <RegisteredVersion>1.0.2.0</RegisteredVersion>
     <JitOptimizationSuppressed>True</JitOptimizationSuppressed>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-02T03:28:36.013</Modified>
+      <Modified>2018-05-02T07:07:17.003</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Wifi.exe">
       <PackagePath>entrypoint\Wifi.exe</PackagePath>
-      <Modified>2018-05-02T03:28:35.343</Modified>
+      <Modified>2018-05-02T07:07:15.833</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\.nuget\packages\microsoft.csharp\4.0.1\lib\netcore50\Microsoft.CSharp.dll">
       <PackagePath>Microsoft.CSharp.dll</PackagePath>
@@ -495,9 +495,205 @@
       <PackagePath>System.Xml.XmlSerializer.dll</PackagePath>
       <Modified>2016-06-11T21:15:04.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2018-04-29T11:54:59.927</Modified>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.736</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.776</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.828</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.914</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.205</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.250</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.269</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.302</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:52.840</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:52.927</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:53.043</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:53.830</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.319</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.340</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.364</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.470</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.370</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.440</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.400</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.411</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.216</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.226</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.237</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.270</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.284</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.295</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.355</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.307</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:17.322</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:18.199</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:18.210</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:18.222</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:18.233</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:18.251</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.488</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.510</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.537</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2018-05-02T03:53:16.705</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -506,36 +702,35 @@
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.921</Modified>
+      <Modified>2018-05-02T03:53:53.227</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.922</Modified>
+      <Modified>2018-05-02T03:53:16.395</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.922</Modified>
+      <Modified>2018-05-02T03:53:17.249</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.923</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.923</Modified>
+      <Modified>2018-05-02T03:53:17.387</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-04-29T11:54:59.924</Modified>
+      <Modified>2018-05-02T03:53:16.583</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2018-04-29T11:54:59.927</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Wifi.xr.xml">
       <PackagePath>Wifi.xr.xml</PackagePath>
-      <Modified>2018-05-02T03:15:13.012</Modified>
+      <Modified>2018-05-02T04:36:46.319</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.15063.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -544,11 +739,11 @@
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2018-05-02T03:28:35.836</Modified>
+      <Modified>2018-05-02T07:07:16.580</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\olda9\Documents\WifiScanner\Wifi\bin\x86\Debug\Core\Wifi.exe">
       <PackagePath>Wifi.exe</PackagePath>
-      <Modified>2018-05-02T03:28:36.008</Modified>
+      <Modified>2018-05-02T07:07:16.984</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

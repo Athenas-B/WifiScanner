@@ -11,17 +11,25 @@
         <SolidColorBrush x:Key="Brush1" Color="Transparent"/>
     </Page.Resources>
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,237.8,176.6">
-        <Button x:ConnectionId='1' x:Name="Record" Content="Record" HorizontalAlignment="Left" Margin="10,621,0,0" VerticalAlignment="Top" Height="68" Width="185"                     />
-        <Button x:ConnectionId='2' x:Name="Load" Content="Load from file" HorizontalAlignment="Left" Margin="256,623,0,0" VerticalAlignment="Top"                   />
+    <Grid x:ConnectionId='1' x:Name="grid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Margin="0,0,237.8,176.6">
+        <Button x:ConnectionId='2' x:Name="Record" Content="Record" HorizontalAlignment="Left" Margin="10,621,0,0" VerticalAlignment="Top" Height="68" Width="185"                     />
+        <Button x:ConnectionId='3' x:Name="Load" Content="Load from file" HorizontalAlignment="Left" Margin="235,621,0,0" VerticalAlignment="Top"                   />
 
-        <Maps:MapControl x:ConnectionId='3' x:Name="MapControl" HorizontalAlignment="Left" Margin="519,38,0,0" VerticalAlignment="Top" Height="634" Width="917" />
-        <ListBox x:ConnectionId='4' x:Name="WifiList" HorizontalAlignment="Left" Height="406" Margin="10,54,0,0" VerticalAlignment="Top" Width="467"                                             >
+        <Maps:MapControl x:ConnectionId='4' x:Name="MapControl" HorizontalAlignment="Left" Margin="519,38,0,0" VerticalAlignment="Top" Height="634" Width="917" MapServiceToken="iDgeTFKL0vl1CvuXfH6M~8Eh2z7SVgda8C7sbKY-FQQ~AlC9E7_6aw-ukLJ-KDpRRmBkJomKLpNjZBwEwLppOIjSeQx4vXPsI6FKhAPekkaX"/>
+        <ListBox x:ConnectionId='5' x:Name="WifiList" HorizontalAlignment="Left" Height="406" Margin="10,54,0,0" VerticalAlignment="Top" Width="467"                                             >
             <x:String>Selectable list of avaible wifi networks</x:String>
         </ListBox>
-        <Button x:ConnectionId='5' x:Name="Save" Content="Save to file" HorizontalAlignment="Left" Margin="256,656,0,0" VerticalAlignment="Top" Width="113"                   />
-        <TextBlock x:ConnectionId='6' x:Name="WifiDetail" HorizontalAlignment="Left" Margin="10,488,0,0" TextWrapping="Wrap" Text="Detailed info about selected network" VerticalAlignment="Top" Height="98" Width="467"/>
-        <Button x:ConnectionId='7' x:Name="Clear" Content="Clear captured data" HorizontalAlignment="Left" Margin="374,633,0,0" VerticalAlignment="Top"                    />
+        <Button x:ConnectionId='6' x:Name="Save" Content="Save to file" HorizontalAlignment="Left" Margin="235,654,0,0" VerticalAlignment="Top" Width="113"                   />
+        <Border x:ConnectionId='7' x:Name="WifiDetailBorder">
+            <TextBlock x:ConnectionId='10' x:Name="WifiDetail" HorizontalAlignment="Left" Margin="10,497,0,0" TextWrapping="Wrap" Text="No selected network" VerticalAlignment="Top" Height="98" Width="467"/>
+        </Border>
+        <Button x:ConnectionId='8' x:Name="Clear" Content="Clear captured data" HorizontalAlignment="Left" Margin="363,654,0,0" VerticalAlignment="Top"                    />
+        <TextBlock HorizontalAlignment="Left" Margin="10,22,0,0" TextWrapping="Wrap" VerticalAlignment="Top">
+            <Run Text="Selectable list of avaible WiFi networks"/>
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="10,472,0,0" TextWrapping="Wrap" Text="Detailed info about selected network:" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="519,18,0,0" TextWrapping="Wrap" Text="Data visualization:" VerticalAlignment="Top"/>
+        <CheckBox x:ConnectionId='9' x:Name="UseBars" Content="Use signal bars" Visibility="Collapsed" HorizontalAlignment="Left" Margin="363,616,0,0" VerticalAlignment="Top" IsChecked="True"                          />
 
     </Grid>
 </Page>
